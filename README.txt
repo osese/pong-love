@@ -1,5 +1,8 @@
 
-Two paddles, one Player controlled and one AI controlled.
+
+https://www.reddit.com/r/gamedev/wiki/getting_started
+
+-> Two paddles, one Player controlled and one AI controlled.
 -> A ball.
 -> A win/lose condition.
 
