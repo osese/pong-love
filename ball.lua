@@ -20,7 +20,7 @@ function Ball:draw()
   love.graphics.ellipse("fill", self.x, self.y, self.r, self.r)
 end 
 
-function Ball:update()
+function Ball:update(p, e)
   
   self.x = self.x + self.xvel
   self.y = self.y + self.yvel
@@ -31,11 +31,11 @@ function Ball:update()
   end     
   
   if self.x < 0  then 
-    game:enemyScore()
+    e.score:up()
     love.audio.play(self.score_sound)
     self:reset()
   elseif self.x > Game.Width then 
-    game:playerScore()
+    p.score:up()
     love.audio.play(self.score_sound)
     self:reset()
   end 

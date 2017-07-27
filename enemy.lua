@@ -25,9 +25,9 @@ function Enemy:ai(b)
   local y = b.y + b.yvel 
 
   if b.y > self.y + self.h then 
-    self.yvel = 4
+    self.yvel = 2
   elseif b.y < self.y then 
-    self.yvel = -4
+    self.yvel = -2
   else 
     self.yvel = 0
   end 

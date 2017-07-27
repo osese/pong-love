@@ -1,4 +1,9 @@
 
+require "MenuState"
+require "GameState"
+require "PauseState"
+require "GameOverState"
+require "WinState"
 
 StateMachine = Object:extend()
 
@@ -7,9 +12,13 @@ function StateMachine:new()
   self.states = {} 
   self.states.menu = MenuState()
   self.states.game = GameState()
-  self.state.gameover = GameOverState()
-  self.state.pause = PauseState()
-  
+  self.states.gameover = GameOverState()
+  self.states.pause = PauseState()
+  self.states.win = WinState()
+end 
+
+function StateMachine:getCurrentState()
+  return  self.states[self.currentstate] 
 end 
 
 function StateMachine:changeState(state)
@@ -17,8 +26,21 @@ function StateMachine:changeState(state)
     return 
   end 
 
-  self.states.currentstate:exit()
-  self.states.state:enter()
-  
+  self:getCurrentState():exit()
+  self.currentstate = state
+  self.states[state]:enter()
+end
+
+function StateMachine:newState(state)
+  if state == "menu" then 
+    self.states.menu = MenuState()
+    self.currentstate = "menu"
+  elseif state == "game" then 
+    self.states.game = GameState()
+    self.currentstate = "game"
+  elseif state == "pause" then 
+    self.states.pause = PauseState()
+    self.currentstate = "pause"
+  end 
 end 
 
