@@ -21,13 +21,6 @@ function PauseState:new()
   self.exit_button = Button(100,300, "Exit")
 end 
 
-function PauseState:enter()
-  
-end 
-
-function PauseState:exit()
-  
-end 
 
 function PauseState:draw()
   self.resume_button:draw()

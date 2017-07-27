@@ -23,13 +23,6 @@ function WinState:new()
   self.exit_button = Button(100,350, "Exit")
 end 
 
-function WinState:enter()
-  
-end 
-
-function WinState:exit()
-  
-end 
 
 function WinState:draw()
   self.gameover:draw()

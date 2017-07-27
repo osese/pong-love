@@ -1,12 +1,8 @@
 
-
 function love.load()
   require "Game"
-  
   game = Game()  
-  
   love.window.setMode(Game.Width, Game.Height)
-  
 end 
 
 

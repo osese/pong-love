@@ -25,10 +25,7 @@ function StateMachine:changeState(state)
   if currentstate == state then 
     return 
   end 
-
-  self:getCurrentState():exit()
   self.currentstate = state
-  self.states[state]:enter()
 end
 
 function StateMachine:newState(state)

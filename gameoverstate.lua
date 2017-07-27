@@ -23,13 +23,6 @@ function GameOverState:new()
   self.exit_button = Button(100,350, "Exit")
 end 
 
-function GameOverState:enter()
-  
-end 
-
-function GameOverState:exit()
-  
-end 
 
 function GameOverState:draw()
   self.gameover:draw()

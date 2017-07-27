@@ -17,18 +17,10 @@ function MenuState:new()
   self.exit_button = Button(100,200, "Exit")
 end 
 
-function MenuState:enter()
-  
-end 
-
-function MenuState:exit()
-  
-end 
 
 function MenuState:draw()
   self.play_button:draw()
   self.exit_button:draw()
-
 end 
 
 
